@@ -13,8 +13,8 @@ s = ""
 mean=0
 for i in range(sn):
     s=s+'a'
-ps1 = []
-ps2 = []
+ps1 = [] #Processes for queue tests are kept here
+ps2 = [] #Precesses for pipe tests are kept here 
 
 ##### Using queue.
 

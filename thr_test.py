@@ -8,8 +8,8 @@ n=10 # Number of job performs (helps to calculate an average value of times)
 
 print "Average time of performing "+ (str)(COUNTER)+ " jobs "+ (str)(n) + " times:"
 
-event=threading.Event()
-event2=threading.Event()
+event=threading.Event() #First event
+event2=threading.Event() #Second event
 
 def f():
 	global cnt
@@ -29,8 +29,8 @@ mean=0
 
 for i in range(n):
 	cnt=0
-	thr= threading.Thread(target=f)
-	thr2= threading.Thread(target=g)
+	thr= threading.Thread(target=f) #First thread
+	thr2= threading.Thread(target=g) #Second thread
 	thr.start()
 	thr2.start()
 	t1=time.time()
@@ -40,4 +40,3 @@ for i in range(n):
 	mean = mean+ t2-t1
 
 print mean/n
-
